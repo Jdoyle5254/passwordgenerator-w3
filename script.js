@@ -17,7 +17,7 @@
 
 // establish/define the characters for each possible option
 var passComponents = {
-upCase: ["A", "B", "C", "D", "E", "F","G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],   
+upCase: ["A", "B", "C", "D", "E", "F","G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],    
 nums: ["1", "2", "3","4", "5", "6", "7", "8", "9", "0"],
 specChar: ["!", "@", "#", "$", "&", "^", "%", "*", "/"],
 }
@@ -26,29 +26,53 @@ var generateBtn = document.querySelector("#generate");
 
 // // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  var password = generatePassword(); 
   var passwordText = document.querySelector("#password");
   
-
-// THEN I am presented with a series of prompts for password criteria
-var passLength = prompt("Please enter password length between 8 and 128:", "enter passLength);
-var upperCase = confirm("Would you like to include Uppper Case Letters?");
-var lowerCase = confirm("Would you like to include Lower Case Letters?");
-var numbers = confirm("Would you like to include Numbers?");
-var specialCharacters = confirm ("Would you like  to include Special Charcters");
-
-for (var i = 0; i < passLength; i++){ 
-  // if uppercase & numbers (specChar, lower case are false)
-  // var pickChoices = choices[Math.floor(Math.random() * choices.length)];
-//     password.push(pickChoices);
-
-
-}
-
-
   passwordText.value = password;
 
  }
+
+ function generatePassword() {
+   // THEN I am presented with a series of prompts for password criteria
+  var passLength = prompt("Please enter password length between 8 and 128:", "enter passLength");
+  var upperCase = confirm("Would you like to include Uppper Case Letters?");
+  var lowerCase = confirm("Would you like to include Lower Case Letters?");
+  var numbers = confirm("Would you like to include Numbers?");
+  var specialCharacters = confirm ("Would you like  to include Special Charcters");
+  var genPass = "";
+
+  // create  for loop set 
+  for (var i = 0; i < passLength; i++){ 
+      // because there are 4 options we are randomizing from 1 to 4 of the user selctions
+      var options = Math.floor(Math.random() * 4)
+      // fpr the selection of upper case we are randomizing the choice
+      if (options == 0) 
+        genPass += passComponents.upCase[Math.floor(Math.random() * passComponents.upCase.length-1)];
+      // fpr the selection of lower case we are randomizing the choice
+      if (options == 1) 
+        genPass += passComponents.upCase[Math.floor(Math.random() * passComponents.upCase.length-1)].toLowerCase();
+      // for the selection of numbers we are randomizing the choice
+      if (options == 2)
+        genPass += passComponents.nums[Math.floor(Math.random() * passComponents.nums.length-1)];
+      // for the selection of special characters we are randomizing the choice
+      if (options == 3)
+        genPass += passComponents.specChar[Math.floor(Math.random() * passComponents.specChar.length-1)];
+
+   
+    }
+    
+
+
+
+    
+
+
+}
+}
+
+
+
  
 
 // // Add event listener to generate button  // WHEN I click the button to generate a password
