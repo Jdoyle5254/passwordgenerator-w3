@@ -10,9 +10,11 @@ User goes to the website and the main page comes up, user clicks on the Generate
 
 
 Once the button is clicked user is asked to input a password length
+![Password Length](https://user-images.githubusercontent.com/69594945/96357817-398c5800-10c6-11eb-99a3-b3b34ce238f9.PNG)
 
 
 User is then asked a series of questions of what characters to include in the password
+
 
 Once selected the system generates a password of that length and the characters.  
 
