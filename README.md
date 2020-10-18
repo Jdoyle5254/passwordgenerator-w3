@@ -6,6 +6,7 @@ To Install locally from Git Hub repository, got to the repository: https://githu
 
 ## Usage
 User goes to the website and the main page comes up, user clicks on the Generate Password Button
+![start screen](https://user-images.githubusercontent.com/69594945/96357886-c7684300-10c6-11eb-8bbb-c9e56353440f.PNG)
 
 
 
