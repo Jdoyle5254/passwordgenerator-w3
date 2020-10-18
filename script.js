@@ -27,8 +27,9 @@ var generateBtn = document.querySelector("#generate");
 
 // // Write password to the #password input
 function writePassword() {
-    var password = generatePassword(); 
-  var passwordText = document.querySelector("#password");
+  var passwordText = document.querySelector("#password");  
+  var password = generatePassword(); 
+  
   
   passwordText.value = password;
 }
@@ -44,10 +45,20 @@ function validateOptions(genPass, charOptions, userInput) {
     // if the user did not pick an optiom we the string is valid and we are asking for the return of true
  return true;
 }
-
+// this function generates the password based on the set variables and runs a do while loop to continue the random selection
  function generatePassword() {
    // THEN I am presented with a series of prompts for password criteria
-  var passLength = parseInt(prompt("Please enter password length between 8 and 128:", "enter passLength"));
+  var passLength = parseInt(prompt("Please enter password length between 8 and 128:"));
+  // validation the user inputs a number that falls between 8 and 128
+  if(!Number.isInteger(passLength)) {
+    alert("Please input a number between 8 and 128");
+    return "";
+  }
+  if(passLength < 7 || passLength > 129) {
+    alert("Please input a number between 8 and 128");
+    return "";
+  }
+  
   var upperCase = confirm("Would you like to include Uppper Case Letters?");
   var lowerCase = confirm("Would you like to include Lower Case Letters?");
   var numbers = confirm("Would you like to include Numbers?");
@@ -90,5 +101,6 @@ function validateOptions(genPass, charOptions, userInput) {
   }
 
 // // Add event listener to generate button  // WHEN I click the button to generate a password
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword); 
+
 
