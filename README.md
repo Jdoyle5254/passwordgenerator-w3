@@ -1,6 +1,11 @@
 # passwordgenerator-w3
+
+##Project Name:   Password Generator
+
 ## Description 
 The goal of this project was to have the system create a strong password based on various user inputs. The user selects the length of the password.   Then selects if they would like to include uppercase, lowercase, numbers, and special characters.   Once input the system will randomly generate a password of that length based on that criteria.   
+
+
 ## Installation 
 To Install locally from Git Hub repository, got to the repository: https://github.com/Jdoyle5254/passwordgenerator-w3.   Click CODE box, select SSH and copy the repository to your clipboard. In your command-line navigate to the folder you want to hold the repository. Once there type 'git clone' and paste the repositiory information into the line. Once completed open the code in VS by typing the command code . This will take you to VS Code and you will be in the repository on your local machine.    You can access the generator from a browser via this link:  https://jdoyle5254.github.io/passwordgenerator-w3/
 
@@ -15,6 +20,8 @@ Once the button is clicked user is asked to input a password length
 
 
 User is then asked a series of questions of what characters to include in the password
+![User Input numbers ](https://user-images.githubusercontent.com/69594945/96357899-f2eb2d80-10c6-11eb-9cfd-3316f86e528d.PNG)
+![User Inputs](https://user-images.githubusercontent.com/69594945/96357900-f67eb480-10c6-11eb-8796-c2339628cccf.PNG)
 
 
 Once selected the system generates a password of that length and the characters.  
