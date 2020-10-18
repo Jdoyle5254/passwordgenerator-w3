@@ -6,8 +6,11 @@ To Install locally from Git Hub repository, got to the repository: https://githu
 
 ## Usage
 User goes to the website and the main page comes up, user clicks on the Generate Password Button
+![Password Generated](https://user-images.githubusercontent.com/69594945/96357810-13ff4e80-10c6-11eb-9620-1870a8efe44c.PNG)
+
 
 Once the button is clicked user is asked to input a password length
+
 
 User is then asked a series of questions of what characters to include in the password
 
