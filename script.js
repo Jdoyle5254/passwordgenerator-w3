@@ -32,14 +32,17 @@ function writePassword() {
   
   passwordText.value = password;
 }
-
-function validateOptions(genPass, charOptions) {
-     for (var i = 0; i < charOptions.length; i++) {
+// this function validates that the user Input, and the charOptions are what was selected 
+function validateOptions(genPass, charOptions, userInput) {
+     if(userInput){
+       for (var i = 0; i < charOptions.length; i++) {
       if (genPass.indexOf(charOptions[i]) > -1)
         return true
-     }
-     return false
-
+       }
+     return false;
+    }
+    // if the user did not pick an optiom we the string is valid and we are asking for the return of true
+ return true;
 }
 
  function generatePassword() {
@@ -78,68 +81,14 @@ function validateOptions(genPass, charOptions) {
       potentials = ""; 
     }
           
-    if(upperCase)   
-      validation = validateOptions(genPass, passComponents.upCase);
-    if(lowerCase)
-      validation = validateOptions(genPass,passComponents.lowCase);
-    if(numbers)
-      validation = validateOptions(genPass, passComponents.nums);
-    if(specialCharacters)
-      validation = validateOptions(genPass, passComponents.specChar);
-
-  }while(validation == false)
+  }
+  // here we run the validation and only want the loop to continue when the return is false
+  while(!validateOptions(genPass, passComponents.upCase, upperCase) && !validateOptions(genPass,passComponents.lowCase,lowerCase) && !validateOptions(genPass, passComponents.num, numbers) && !validateOptions(genPass, passComponents.specChar, specialCharacters))
 
   return genPass;
     
   }
 
-
-
-
- 
-
 // // Add event listener to generate button  // WHEN I click the button to generate a password
 generateBtn.addEventListener("click", writePassword);
 
-// if (tagName !== "h1" && tagName !== "h2" && tagName !== "p" && tagName !== "div") {
-//   alert("please enter a valid tag");
-// } else {
-//   var tag = document.createElement(tagName);
-//   tag.textContent = "This was made via prompts. It's a " + tagName;
-//   document.body.appendChild(tag);
-// }
-
-// var nextTag = confirm("Would you like to add another tag?");
-// if (nextTag === true) {
-//   var secondTagName = prompt("Please enter another  HTML Tag (ex. h1, h2, p, div):", "enter tag here");
-//   if(secondTagName !== "h1" && secondTagName !== "h2" && secondTagName !== "p" && secondTagName !== "div") {
-//     alert("please enter a valid tag");
-//   } else {
-//     var secondTag = document.createElement(secondTagName);
-//     secondTag.textContent = "This is our second tag via prompts, it's a " + secondTagName;
-//     document.body.appendChild(secondTag);
-//   }
-// }
-
-
-// var tagName = prompt("Please enter an HTML Tag (ex. h1, h2, p, div):", "enter tag");
-
-// if (tagName !== "h1" && tagName !== "h2" && tagName !== "p" && tagName !== "div") {
-//   alert("please enter a valid tag");
-// } else {
-//   var tag = document.createElement(tagName);
-//   tag.textContent = "This was made via prompts. It's a " + tagName;
-//   document.body.appendChild(tag);
-// }
-
-// var nextTag = confirm("Would you like to add another tag?");
-// if (nextTag === true) {
-//   var secondTagName = prompt("Please enter another  HTML Tag (ex. h1, h2, p, div):", "enter tag here");
-//   if(secondTagName !== "h1" && secondTagName !== "h2" && secondTagName !== "p" && secondTagName !== "div") {
-//     alert("please enter a valid tag");
-//   } else {
-//     var secondTag = document.createElement(secondTagName);
-//     secondTag.textContent = "This is our second tag via prompts, it's a " + secondTagName;
-//     document.body.appendChild(secondTag);
-//   }
-// }
